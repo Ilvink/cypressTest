@@ -31,7 +31,7 @@ it ('second test', ()=>{
 
 
    })
-   it.only('getDate',() =>{
+   it('getDate',() =>{
     cy.visit('/')
     cy.contains('Реестр').click()
     cy.get('#filterField-6-dateRange-from').click()
@@ -40,7 +40,9 @@ it ('second test', ()=>{
     })
    })
 
-it('find and eq',() =>{
+it.only('find and eq',() =>{
   cy.visit('/')
   cy.get('.menu-container').find('a').eq(0)
 });
+
+//xnj-то что-то
