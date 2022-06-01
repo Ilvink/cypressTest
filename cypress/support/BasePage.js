@@ -6,7 +6,11 @@ export class BasePage{
     }
    loginwithCustomer(){
        cy.contains('Личный кабинет').click()
-       .get('span')
+        .get('.lk-menu-item__title').eq(1).click()
+        .get('[placeholder="Логин"]').type('customer')
+        .get('#passwordInput').type('customer')
+        .get('button[type="submit"]').should('be.visible').click()
+        
    }
 
 }
