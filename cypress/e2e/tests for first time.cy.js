@@ -74,7 +74,11 @@ it('API test', () =>{
       url: "https://tender-cache-api.rc.eot-agregator.ru/api/TradeLot/list-published-trade-lots",
       body: reqBody,
       headers: Headers
-  }).then((responce)=>{
-        console.log(responce.body);
+  }).then((response) => {
+      expect(response).to.have.property('status').to.equal(200)
+      expect(response.body).to.have.property('totalCount').to.equal(1)
+      expect('[Array(1)]').to.have.property('tradeNumber').to.equal("111111100122102287")
+      console.log(response.body)
+      
     });
 });
